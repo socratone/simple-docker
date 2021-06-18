@@ -48,6 +48,8 @@ docker ps
 docker container prune
 ```
 
-## .dockerignore
+## 파일 설명
+
+### .dockerignore
 
 Dockerfile에서 COPY를 할 때 포함하지 않을 파일이나 폴더
