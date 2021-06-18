@@ -40,6 +40,11 @@ docker image prune
 docker ps
 ```
 
+멈춰 있는 콘테이너를 삭제한다.
+```
+docker container prune
+```
+
 ## .dockerignore
 
 Dockerfile에서 COPY를 할 때 포함하지 않을 파일이나 폴더
