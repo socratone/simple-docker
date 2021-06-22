@@ -1,4 +1,4 @@
-# Simple Docker React
+# Simple Docker
 
 도커를 이용해서 리액트 앱을 띄우는 예제.\
 앱을 실행하려면 아래 명령어로 이미지를 생성하고 콘테이너를 실행한다.
