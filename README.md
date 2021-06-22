@@ -17,9 +17,12 @@ docker build -t react-image .
 80포트로 접근할 수 있는 콘테이너를 생성하고 실행한다.\
 react-image라는 이미지를 이용해서 콘테이너를 만들고\
 react-container로 이름 짓는다.\
-모든 콘테이너는 3000 포트로 연결된다.
+모든 콘테이너는 3000 포트로 연결된다.\
+react-data라는 volume을 생성해서 콘테이너의 /app/data에 연결한다.\
+react-data가 이미 있으면 연결만 한다.
+
 ```
-docker run -d -p 80:3000 --name react-container react-image
+docker run -d -p 80:3000 -v react-data:/app/data --name react-container react-image
 ```
 [http://localhost:80](http://localhost:80)으로 리액트 앱에 접속할 수 있다.
 
@@ -44,8 +47,24 @@ docker ps
 ```
 
 멈춰 있는 콘테이너를 삭제한다.
+
 ```
 docker container prune
+```
+
+콘테이너를 shell로 실행한다.
+```
+docker exec -it 콘테이너아이디 sh
+```
+
+볼륨을 따로 생성한다.
+```
+docker volume create 볼륨이름
+```
+
+생성된 볼륨의 정보를 본다.
+```
+docker volume inspect 볼륨이름
 ```
 
 ## 파일 설명

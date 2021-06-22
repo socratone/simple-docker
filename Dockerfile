@@ -1,8 +1,17 @@
 # 용량이 최적화 돼 있는 알파인 리눅스 노드 이미지를 가져와서 시작한다.
 FROM node:14.16.0-alpine3.13
 
+# app이라는 그룹과 app이라는 사용자를 만든다.
+RUN addgroup app && adduser -S -G app app
+
+# app이라는 사용자로 설정한다.
+USER app
+
 # 이후의 명령은 /app 경로에서 이뤄진다.
 WORKDIR /app
+
+# /app 경로에 data 폴더를 만든다.
+RUN mkdir data
 
 # package로 시작하고 .json으로 끝나는 모든 파일을 기본 경로에 복사한다.
 COPY package*.json .
