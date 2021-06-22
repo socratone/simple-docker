@@ -28,6 +28,8 @@ docker run -d -p 80:3000 -v react-data:/app/data --name react-container react-im
 
 ### 그밖에 알아야 할 명령어들
 
+#### Image
+
 빌드된 이미지 리스트를 보여준다.
 
 ```
@@ -39,6 +41,8 @@ docker images
 ```
 docker image prune
 ```
+
+#### Container
 
 실행중인 콘테이너 리스트를 보여준다.
 
@@ -56,6 +60,20 @@ docker container prune
 ```
 docker exec -it 콘테이너아이디 sh
 ```
+
+콘테이너의 파일을 현재 위치에 복사한다.\
+(콘테이너의 /app/one.js 파일을 복사)
+```
+docker cp 콘테이너아이디:/app/one.js .
+```
+
+특정 파일을 콘테이너에 복사해 넣는다.
+(one.js 파일을 콘테이너의 /app 경로에 복사)
+```
+docker cp one.js 콘테이너아이디:/app
+```
+
+#### Volume
 
 볼륨을 따로 생성한다.
 ```
